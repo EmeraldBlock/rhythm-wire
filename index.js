@@ -1,5 +1,6 @@
 import { canvas, dims } from "./src/constants.js";
 import { getLeftAim, getRightAim } from "./src/aim.js";
+import { drawKeyboard } from "./src/keys.js";
 
 let leftLoc = getLeftAim();
 let rightLoc = getRightAim();
@@ -19,6 +20,7 @@ const upd = (t) => {
 
     ctx.fillStyle = "black";
     ctx.fillRect(0,0,dims.x,dims.y);
+    drawKeyboard(ctx);
 
     ctx.beginPath();
     ctx.moveTo(leftLoc.x,leftLoc.y);
@@ -29,6 +31,9 @@ const upd = (t) => {
 
     dot(leftLoc, "red");
     dot(rightLoc, "blue");
+    ctx.globalCompositeOperation = "screen";
+    dot(leftLoc, "red");
+    ctx.globalCompositeOperation = "source-over";
 
     requestAnimationFrame(upd);
 };
