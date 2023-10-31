@@ -2,20 +2,9 @@ body {
     margin: 0;
 }
 
-#saber, #saber2 {
-    position: absolute;
-    left: 50vw;
-    top: 50vh;
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
-    transform: translate(-50%,-50%);
-}
-
-#saber {
-    background-color: red;
-}
-
-#saber2 {
-    background-color: blue;
+main {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
